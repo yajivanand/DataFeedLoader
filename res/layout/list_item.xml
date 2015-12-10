@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffe5e5e5"
+    android:paddingTop="2sp"
+    android:paddingBottom="2sp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/feedTitle"
+        android:layout_toLeftOf="@+id/imageArrow"
+        android:textColor="#ff162695" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/feedDescription"
+        android:layout_below="@+id/feedTitle"
+        android:layout_toLeftOf="@+id/feedImage"
+        android:textColor="#ff484848"
+        android:layout_marginTop="2sp"
+        android:layout_marginRight="2sp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:id="@+id/feedImage"
+        android:layout_toLeftOf="@+id/imageArrow"
+        android:layout_below="@+id/feedTitle"
+        android:contentDescription=""
+        android:scaleType="fitXY"
+        android:src="@drawable/no_image"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageArrow"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/arrow_image"
+        android:layout_margin="3sp"
+        android:contentDescription=""
+        />
+</RelativeLayout>
