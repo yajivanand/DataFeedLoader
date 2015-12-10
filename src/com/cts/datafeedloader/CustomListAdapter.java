@@ -9,6 +9,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,13 +61,16 @@ public class CustomListAdapter extends ArrayAdapter<Rows> {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        if (data[position].imageHref == null || data[position].imageHref.isEmpty()) {
+        if (data[position].imageHref == null || data[position].imageHref.equals("")) {
             //don't add any image src. 
            // viewHolder.feedImageView.setImageResource(R.drawable.No_Image_Available);       
         	viewHolder.feedImageView.setVisibility(View.GONE);
             Log.d("FeedListAdapter","Image URL is null or empty");
         }else {
-            new DownloadImageAsyncTask().execute(viewHolder);
+        	if(Build.VERSION.SDK_INT >= 11)
+        		new DownloadImageAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, viewHolder);
+        	else
+        		new DownloadImageAsyncTask().execute(viewHolder);
         }
 
         viewHolder.feedTitleView.setText(data[position].title);

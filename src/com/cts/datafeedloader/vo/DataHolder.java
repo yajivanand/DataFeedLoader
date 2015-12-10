@@ -9,5 +9,5 @@ import java.util.ArrayList;
  */
 public class DataHolder {
     public String title;
-    public ArrayList<Rows> dataArray;
+    public ArrayList<Rows> rows;
 }

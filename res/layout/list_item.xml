@@ -32,8 +32,7 @@
         android:layout_toLeftOf="@+id/imageArrow"
         android:layout_below="@+id/feedTitle"
         android:contentDescription=""
-        android:scaleType="fitXY"
-        android:src="@drawable/no_image"/>
+        android:scaleType="fitXY"/> <!-- android:src="@drawable/no_image" -->
 
     <ImageView
         android:layout_width="wrap_content"
